@@ -1,1 +1,2 @@
-#site-de-postagens
+# site-de-postagens
+Site com cadastro, login, criar e visualizar posts.
