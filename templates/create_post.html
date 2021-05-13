@@ -1,0 +1,21 @@
+{%extends 'base.html'%}
+
+{%block title%}Create Post{%endblock%}
+
+{%block content%}
+<form action="{%url 'pages:create_post' %}" method="post" class="ui form" enctype="multipart/form-data"> {% csrf_token %}
+    <div class="field">
+      <label>Titulo</label>
+      <input required type="text" name="title">
+    </div>
+    <div class="field">
+      <label>Conteudo</label>
+      <textarea required name="content"></textarea>
+    </div>
+    <div class="ui">
+        <input required type="file" name="image">
+    </div>
+    <br>
+    <button class="ui button" type="submit">Submit</button>
+  </form>
+{%endblock%}

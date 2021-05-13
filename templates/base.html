@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>{%block title%}{%endblock%}</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.7/dist/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.7/dist/semantic.min.js"></script>
+</head>
+<body>
+    <div class="ui">
+        {%if user.is_authenticated%}
+        <div class="ui secondary  menu">
+            <a class="active item" href="{%url 'pages:home'%}">
+              Home
+            </a>
+            <div class="right menu">
+                <a class="ui item" href="{%url 'account_logout'%}">
+                Sair
+                </a>
+                <a class="ui item" href="{%url 'pages:post'%}">
+                Criar Post
+                </a>
+            </div>
+        </div>
+        {%else%}
+                <div class="ui secondary  menu">
+                    <a class="active item" href="{%url 'pages:home'%}">
+                      Home
+                    </a>
+                <div class="right menu"></div>
+              <a class="ui item" href="{%url 'account_login'%}">
+                Entrar
+              </a>
+              <a class="ui item"href="{%url 'account_signup'%}">
+                Cadastrar
+              </a>
+        </div>
+    </div>
+        {%endif%}
+
+    <div class="ui hidden divider"></div>
+
+    <div class="ui container">
+        {%block content%}
+        {%endblock%}
+    </div>
+</body>
+</html>

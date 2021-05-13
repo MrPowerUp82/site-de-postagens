@@ -1,0 +1,31 @@
+{%extends 'base.html'%}
+
+{%block title%}WebCoffee{%endblock%}
+
+{%block content%}
+    {%if user.is_authenticated%}
+    <h1>Seja Bem-Vindo {{user}}</h1>
+        {%for post in posts%}
+            <br><br>
+            <div class="ui">
+                <div style="font-weight:bold;font-size:20px;" class="header">{{post.title}}</div>
+                <br>
+                <div class="description">{{post.content}}</div>
+                <div class="image" ><img width="400px" height="400px" src="media/{{post.image}}"></div>
+            <div class="extra content">
+                {%if post.author == None%}
+                Postado por admin
+                {%else%}
+                Postado por {{post.author}}
+                {%endif%}
+            </div>
+            </div>
+            <br><br>
+        {%endfor%}
+    {%else%}
+    <h1>Seja Bem-Vindo Estranho</h1>
+    {%endif%}
+    {%for d in data%}
+    {{d}}
+    {%endfor%}
+{%endblock%}
