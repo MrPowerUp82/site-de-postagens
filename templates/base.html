@@ -17,12 +17,21 @@
               Home
             </a>
             <div class="right menu">
-                <a class="ui item" href="{%url 'account_logout'%}">
-                Sair
+                <a class="ui item" href="{%url 'messages_inbox'%}">
+                Caixa de Mensagens
+                </a>
+                <a class="ui item" href="{%url 'messages_compose'%}">
+                Criar Mensagem
+                </a>
+                <a class="ui item" href="{%url 'messages_outbox'%}">
+                Mensagens Enviadas
                 </a>
                 <a class="ui item" href="{%url 'pages:post'%}">
-                Criar Post
+                Criar Publicação
                 </a>
+                <a class="ui item" href="{%url 'account_logout'%}">
+                  Sair
+                  </a>
             </div>
         </div>
         {%else%}

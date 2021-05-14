@@ -4,3 +4,4 @@ __pycache__/
 .idea/
 db.sqlite3
 projeto6/settings.py
+.gitignore

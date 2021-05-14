@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 import django.contrib.auth
+import django_messages
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -52,6 +53,9 @@ INSTALLED_APPS = [
     #ckeditor
     'ckeditor',
     'ckeditor_uploader',
+
+
+    'django_messages',
 
     'pages',
     'posts',
@@ -161,4 +165,12 @@ CKEDITOR_UPLOAD_PATH="uploads/"
 MEDIA_URL='/media/'
 MEDIA_ROOT=os.path.join(BASE_DIR, 'media')
 
+
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django_messages.context_processors.inbox',
+)
+
 #AUTH_USER_MODEL= django.contrib.auth.get_user_model()
+
+FORM_RENDERER = 'django.forms.renderers.DjangoTemplates'

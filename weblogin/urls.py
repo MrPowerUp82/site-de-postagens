@@ -25,4 +25,6 @@ urlpatterns = [
     path("ckeditor/", include("ckeditor_uploader.urls")),
     path("", include('pages.urls', namespace="pages")),
     path("", include('posts.urls', namespace="posts")),
+    path("messages/", include('django_messages.urls')),
+    
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
