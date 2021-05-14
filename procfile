@@ -1,2 +1,1 @@
-config:set DISABLE_COLLECTSTATIC=1
-web: gunicorn webcoffee.wsgi --log-file 
+web: gunicorn weblogin.wsgi --log-file 
