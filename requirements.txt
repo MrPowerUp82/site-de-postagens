@@ -5,5 +5,6 @@ django-crispy-forms==1.11.2
 django-messages==0.6.0
 django_heroku==0.3.1
 Pillow==8.2.0
+gunicorn==20.1.0
 
 
